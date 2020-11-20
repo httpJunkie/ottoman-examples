@@ -1,4 +1,4 @@
-// Scenario 01: Legacy no scope or collection provided (default)
+// Legacy no scope or collection provided (default)
 
 const { setGlobalConfig } = require('ottoman')
 ottoman.globalConfig({})
@@ -25,17 +25,17 @@ value: {
   country: "United States",
   name: "Couchbase Airlines",
   id: "48bbab70-277b-4730-ba4a-c53fa200b292",
-  type: "Airline"
+  _type: "Airline"
 }
 ```
 
+// RESOLVEDSCOPEANDCOLLECTION:
+// resolve to: scopeName: '_default', collectionName: '_default'
+
 // ENSURECOLLECTIONSLOGIC:
-// scopeName: '_default', collectionName: '_default'
-// 
 // if ensureScopeAndCollection = true, start() calls a method called ensureCollections() 
 //    no attempts to create scope and collections should happen because 
-//    the default scope will always exist and can never be dropped
-//    the default collection can be dropped can never be recreated (per Jim Walker collections team)
+//    in modern we are skipping so it should be skipped in legacy as well
 
 // ENSUREINDEXESLOGIC:
 // if ensureIndexes = true, create indexes

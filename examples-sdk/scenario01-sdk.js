@@ -9,7 +9,6 @@ const cluster = new couchbase.Cluster("couchbase://localhost", {
 var bucket = cluster.bucket('travel')
 // var collection = bucket.collection('Airline')
 
-
 const createCollection = async () => {
   try {
     await bucket.collections().createCollection({
