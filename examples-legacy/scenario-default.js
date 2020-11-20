@@ -19,7 +19,7 @@ ottoman.start(ensureScopeAndCollection, ensureIndexes)
 
 // DOCUMENT:
 ```
-key: '_default$Airline::48bbab70-277b-4730-ba4a-c53fa200b292'
+key: '_default$_default::48bbab70-277b-4730-ba4a-c53fa200b292'
 value: {
   callsign: "CBA",
   country: "United States",
