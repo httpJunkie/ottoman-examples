@@ -1,10 +1,12 @@
 // Legacy no scope or collection provided (default)
 
+// Global Level Definition
 const { Ottoman } = require('ottoman')
 var ottoman = new Ottoman({ })
 
 const schema = new Schema({ callsign: String, country: String, name: String })
 
+// Model Level Definition
 const options = { } // assumes default
 const Airline = connection.model('Airline', schema, options)
 const cb_airlines = new Airline({ 
@@ -31,15 +33,14 @@ value: {
 ```
 
 // RESOLVEDSCOPEANDCOLLECTION:
-// resolve to: scopeName: '_default', collectionName: '_default'
+// Resolve to: scopeName: '_default', collectionName: '_default'
 
 // ENSURECOLLECTIONSLOGIC:
-// if ottoman.ensureCollections is called or start() which also calls ensureCollections()  
-//    we should attempt to recreate the default scope and collection
-//    this will result in an unsupported exception, we should eat this error (IGNORE)
+// If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
+//    we should not attempt to recreate the default scope and collection
 
 // ENSUREINDEXESLOGIC:
-// create indexes *it should create the indexes (should not fail)
+// Create indexes *it should create the indexes (should not fail)
 
 // ORDERLOGIC: 
 // When start() is called ensureCollections() is called first and then ensureIndexes() is called

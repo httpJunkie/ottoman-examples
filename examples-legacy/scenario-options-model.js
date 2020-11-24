@@ -24,12 +24,12 @@ ottoman.start() // ottoman.ensureCollections() && calls ottoman.ensureIndexes()
 // Since scopeName and collecionName were provided at the model level, it takes precedence
 
 // ENSURECOLLECTIONSLOGIC:
-// if ottoman.ensureCollections is called or start() which also calls ensureCollections()  
+// If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
 //    we should attempt to create the 'na' && 'Airlines' scope and collection
 //    this will result in an unsupported exception, we should throw as unsupported
 
 // ENSUREINDEXESLOGIC:
-// this would fail as unsupported. though it would not be called if ensureCollections fails anyways.
+// This would fail as unsupported. though it would not be called if ensureCollections fails anyways.
 
 // ORDERLOGIC: 
 // When start() is called ensureCollections() is called first and then ensureIndexes() is called

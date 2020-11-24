@@ -29,15 +29,14 @@ value: {
 ```
 
 // RESOLVEDSCOPEANDCOLLECTION:
-// resolve to: scopeName: '_default', collectionName: '_default'
+// Resolve to: scopeName: '_default', collectionName: '_default'
 
 // ENSURECOLLECTIONSLOGIC:
-// if ottoman.ensureCollections is called or start() which also calls ensureCollections()  
-//    we should attempt to recreate the default scope and collection
-//    if collection esixts error occurs we should swallow
+// If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
+//    we should not attempt to recreate the default scope and collection
 
 // ENSUREINDEXESLOGIC:
-// create indexes *it should create the indexes (should not fail)
+// Create indexes *it should create the indexes (should not fail)
 
 // ORDERLOGIC: 
 // When start() is called ensureCollections() is called first and then ensureIndexes() is called

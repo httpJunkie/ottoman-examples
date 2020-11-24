@@ -33,12 +33,12 @@ value: {
 // Since scopeName and collecionName were provided at the model level, it takes precedence
 
 // ENSURECOLLECTIONSLOGIC:
-// if ottoman.ensureCollections is called or start() which also calls ensureCollections()  
+// If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
 //    an attempt to create scope and collections will happen
 //    ignore scope and collection exist errors
 
 // ENSUREINDEXESLOGIC:
-// create indexes *it should create the indexes (should not fail)
+// Create indexes *it should create the indexes (should not fail)
 
 // ORDERLOGIC: 
 // When start() is called ensureCollections() is called first and then ensureIndexes() is called
