@@ -19,19 +19,10 @@ cb_airlines.save()
 ottoman.start() // ottoman.ensureCollections() && calls ottoman.ensureIndexes()
 
 // RESULT: 
-// SUCCESS
+// FAIL
 
 // DOCUMENT:
-```
-key: 'Airline::48bbab70-277b-4730-ba4a-c53fa200b292'
-value: {
-  callsign: "CBA",
-  country: "United States",
-  name: "Couchbase Airlines",
-  id: "48bbab70-277b-4730-ba4a-c53fa200b292",
-  _type: "Airline"
-}
-```
+// No doc created
 
 // RESOLVEDSCOPEANDCOLLECTION:
 // Resolve to: scopeName: '_default', collectionName: 'Airline'
