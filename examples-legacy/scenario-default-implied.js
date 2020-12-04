@@ -1,13 +1,18 @@
-// Modern no scope or collection provided (default)
+// Legacy no scope or collection provided (default)
+// implied collection name is assumed to be the model name ("Airline")
 
+// Global Level Definition
 const { Ottoman } = require('ottoman')
-var ottoman = new Ottoman({ collectionName: '_default'})
+var ottoman = new Ottoman({ })
 
 const schema = new Schema({ callsign: String, country: String, name: String })
 
-const options = {} // assumes default
+// Model Level Definition
+const options = { } // assumes default
 const Airline = connection.model('Airline', schema, options)
-const cb_airlines = new Airline({ callsign: 'CBA', country: 'United States', name: 'Couchbase Airlines' })
+const cb_airlines = new Airline({ 
+  callsign: 'CBA', country: 'United States', name: 'Couchbase Airlines' 
+})
 
 cb_airlines.save()
 
@@ -29,15 +34,15 @@ value: {
 ```
 
 // RESOLVEDSCOPEANDCOLLECTION:
-// Resolve to: scopeName: '_default', collectionName: '_default'
-// explicitly providing a collectionname as `_default` overrides implied collectionName
+// Resolve to: scopeName: '_default', collectionName: 'Airline'
 
 // ENSURECOLLECTIONSLOGIC:
 // If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
-//    we should not attempt to recreate the default scope and collection
+//    we should attempt to create `Airline` collection under the `_default` scope
+//    this will result in an unsupported exception, we should throw as unsupported
 
 // ENSUREINDEXESLOGIC:
-// Create indexes *it should create the indexes (should not fail)
+// This would fail as unsupported. though it would not be called if ensureCollections fails anyways.
 
 // ORDERLOGIC: 
 // When start() is called ensureCollections() is called first and then ensureIndexes() is called

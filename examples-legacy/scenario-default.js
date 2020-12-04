@@ -2,7 +2,7 @@
 
 // Global Level Definition
 const { Ottoman } = require('ottoman')
-var ottoman = new Ottoman({ })
+var ottoman = new Ottoman({ collectionName: '_default'})
 
 const schema = new Schema({ callsign: String, country: String, name: String })
 
@@ -34,6 +34,7 @@ value: {
 
 // RESOLVEDSCOPEANDCOLLECTION:
 // Resolve to: scopeName: '_default', collectionName: '_default'
+// explicitly providing a collectionname as `_default` overrides implied collectionName
 
 // ENSURECOLLECTIONSLOGIC:
 // If ottoman.ensureCollections is called or start() which also calls ensureCollections()  
